@@ -19,6 +19,7 @@ public class viewDetailsPanel extends javax.swing.JPanel {
     /**
      * Creates new form viewDetailsPanel
      * @param addedUser
+     * @throws java.io.IOException
      */
     
     
@@ -27,7 +28,9 @@ public class viewDetailsPanel extends javax.swing.JPanel {
     public viewDetailsPanel(User addedUser) throws IOException {
         initComponents();
         Image img = ImageIO.read(new File(addedUser.getProfilePicturePath()));
-        jButton1.setIcon(new ImageIcon(img));
+        Image img1;
+        img1 = img.getScaledInstance(117,192, Image.SCALE_SMOOTH);
+        jButton1.setIcon(new ImageIcon(img1));
         firstNameLabel.setText(addedUser.getFirstName());
         lastNameLabel.setText(addedUser.getLastName());
         majorLabel.setText(addedUser.getMajor());
