@@ -6,6 +6,9 @@ package infolabtwo;
 
 import data.User;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
 /**
@@ -317,7 +320,12 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         else {
             // pass data to newly created panel and switch to that panel
-            viewDetailsPanel viewPanel = new viewDetailsPanel(inputUser); // creation new panel
+            viewDetailsPanel viewPanel = null;
+            try {
+                viewPanel = new viewDetailsPanel(inputUser); // creation new panel
+            } catch (IOException ex) {
+                Logger.getLogger(MainJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
             jSplitPane1.setBottomComponent(viewPanel); // telling splitPanel to switch
         }
             
