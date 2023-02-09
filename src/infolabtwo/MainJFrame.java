@@ -294,7 +294,37 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
-        
+        if(firstNameField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the First Name");
+        }
+        else if(lastNameField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Last Name");
+        }
+        else if(cityField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the City");
+        }
+        else if(addressField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Address");
+        }
+        else if(ageField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Age");
+        }
+        else if(countryField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Country");
+        }
+        else if(emailField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Email");
+        }
+        else if(telephoneNumberField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Telephone Number");
+        }
+        else if(majorField.getText() == null) {
+            JOptionPane.showMessageDialog(this, "Please enter the Major");
+        }
+        else if(inputUser.getProfilePicturePath()==null) {
+            JOptionPane.showMessageDialog(this, "Please add the picture");
+        }
+        else {
         inputUser.setFirstName(firstNameField.getText());
         inputUser.setLastName(lastNameField.getText());
         inputUser.setCity(cityField.getText());
@@ -308,7 +338,7 @@ public class MainJFrame extends javax.swing.JFrame {
         String message = "FirstName: "+ inputUser.getFirstName() + " Last Name :" + inputUser.getLastName() + " City: " + inputUser.getCity() + " Major: " + inputUser.getMajor() + " Email: " + inputUser.getEmail() + " Telephone: " + inputUser.getTelephoneNumber() + " Address: " + inputUser.getAddress() + " Age: " + inputUser.getAge() + " Country: " + inputUser.getCountry();
 
         System.out.println(message);
-        JOptionPane.showMessageDialog(this, message, "Save Successful", HEIGHT);
+        JOptionPane.showMessageDialog(this, message, "Save Successful", HEIGHT); }
 
         
 
